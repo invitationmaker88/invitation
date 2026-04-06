@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christening Invitation of baby kalixto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #b8965a;
+            --gold-light: #d4b483;
+            --gold-pale: #f5ede0;
+            --cream: #fdfaf5;
+            --text-dark: #2a2118;
+            --text-mid: #6b5c45;
+            --text-light: #9e8c75;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #e8e0d5;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 16px 60px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Soft background texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(212, 180, 131, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(184, 150, 90, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(253, 250, 245, 0.3) 0%, transparent 80%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Floating clouds */
+        .clouds { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+        .cloud {
+            position: absolute;
+            background: rgba(255,255,255,0.55);
+            border-radius: 999px;
+        }
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: inherit;
+            border-radius: 999px;
+        }
+        .c1 { width: 110px; height: 38px; top: 12%; animation: drift 28s linear infinite; }
+        .c1::before { width: 45px; height: 45px; top: -22px; left: 18px; }
+        .c1::after  { width: 32px; height: 32px; top: -16px; right: 15px; }
+
+        .c2 { width: 80px; height: 28px; top: 35%; animation: drift 22s linear infinite; animation-delay: -8s; }
+        .c2::before { width: 34px; height: 34px; top: -17px; left: 12px; }
+        .c2::after  { width: 25px; height: 25px; top: -12px; right: 12px; }
+
+        .c3 { width: 130px; height: 44px; top: 58%; animation: drift 32s linear infinite; animation-delay: -16s; }
+        .c3::before { width: 52px; height: 52px; top: -26px; left: 22px; }
+        .c3::after  { width: 38px; height: 38px; top: -18px; right: 18px; }
+
+        .c4 { width: 90px; height: 32px; top: 78%; animation: drift 25s linear infinite; animation-delay: -4s; }
+        .c4::before { width: 38px; height: 38px; top: -19px; left: 14px; }
+        .c4::after  { width: 28px; height: 28px; top: -14px; right: 14px; }
+
+        @keyframes drift {
+            from { transform: translateX(-200px); }
+            to   { transform: translateX(calc(100vw + 200px)); }
+        }
+
+        /* Card */
+        .card {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 680px;
+            background: var(--cream);
+            border-radius: 4px;
+            box-shadow:
+                0 2px 0 var(--gold-light),
+                0 4px 0 rgba(184,150,90,0.3),
+                0 30px 80px rgba(42,33,24,0.18),
+                0 8px 20px rgba(42,33,24,0.08);
+            animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+            overflow: hidden;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(40px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Gold top bar */
+        .card-top-bar {
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-light));
+        }
+
+        /* Decorative border inside */
+        .card-inner {
+            margin: 28px;
+            border: 1px solid rgba(184,150,90,0.25);
+            padding: 40px 36px 44px;
+        }
+
+        /* Corner ornaments */
+        .corner {
+            position: absolute;
+            font-size: 22px;
+            color: var(--gold-light);
+            line-height: 1;
+            opacity: 0.7;
+        }
+        .corner-tl { top: 38px; left: 38px; }
+        .corner-tr { top: 38px; right: 38px; transform: scaleX(-1); }
+        .corner-bl { bottom: 38px; left: 38px; transform: scaleY(-1); }
+        .corner-br { bottom: 38px; right: 38px; transform: scale(-1,-1); }
+
+        /* Cross */
+        .cross-wrap {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .cross-symbol {
+            display: inline-block;
+            font-size: 56px;
+            color: var(--gold);
+            animation: halo 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 2px 6px rgba(184,150,90,0.3));
+            line-height: 1;
+        }
+        @keyframes halo {
+            from { filter: drop-shadow(0 2px 8px rgba(184,150,90,0.25)); }
+            to   { filter: drop-shadow(0 2px 20px rgba(184,150,90,0.55)); }
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-light), transparent); }
+        .divider-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+        /* Heading */
+        .heading-invited {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4em, 6vw, 3.4em);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+        }
+        .heading-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1em, 3vw, 1.25em);
+            font-weight: 400;
+            color: var(--text-mid);
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        /* Details */
+        .details-block {
+            background: var(--gold-pale);
+            border: 1px solid rgba(184,150,90,0.2);
+            border-radius: 2px;
+            padding: 28px 30px;
+            margin: 28px 0;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(184,150,90,0.18);
+        }
+        .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .detail-row:first-child { padding-top: 0; }
+
+        .detail-icon {
+            font-size: 1.4em;
+            color: var(--gold);
+            width: 30px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            text-align: center;
+        }
+        .detail-content { flex: 1; }
+        .detail-label {
+            font-size: 0.68em;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .detail-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15em;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* RSVP Section */
+        .rsvp-section { text-align: center; margin-top: 10px; }
+
+        .rsvp-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1em;
+            font-style: italic;
+            color: var(--text-mid);
+            margin-bottom: 18px;
+            letter-spacing: 0.05em;
+        }
+
+        /* Toggle Button */
+        .rsvp-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 15px 36px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.18s, box-shadow 0.25s;
+            box-shadow: 0 4px 18px rgba(184,150,90,0.35);
+        }
+        .rsvp-toggle-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(184,150,90,0.45);
+        }
+        .rsvp-toggle-btn:active { transform: translateY(0); }
+        .rsvp-toggle-btn.open {
+            background: var(--text-mid);
+            box-shadow: 0 4px 14px rgba(42,33,24,0.2);
+        }
+
+        /* RSVP Form Panel */
+        .rsvp-panel {
+            display: none;
+            margin-top: 26px;
+            background: var(--white);
+            border: 1px solid rgba(184,150,90,0.22);
+            border-radius: 2px;
+            padding: 30px 28px;
+            text-align: left;
+            animation: panelIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .rsvp-panel.visible { display: block; }
+
+        @keyframes panelIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 7px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid rgba(184,150,90,0.3);
+            border-radius: 2px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
+            color: var(--text-dark);
+            background: var(--cream);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(184,150,90,0.1);
+        }
+
+        /* Preview box */
+        .guest-preview {
+            display: none;
+            background: var(--gold-pale);
+            border: 1px solid rgba(184,150,90,0.25);
+            border-radius: 2px;
+            padding: 14px 18px;
+            margin: 4px 0 18px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.08em;
+            color: var(--text-dark);
+            text-align: center;
+            line-height: 1.5;
+        }
+        .guest-preview strong { color: var(--gold); }
+
+        /* Submit button */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--text-dark);
+            color: var(--white);
+            border: none;
+            border-radius: 2px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.18s;
+        }
+        .submit-btn:hover { background: #3d2f20; transform: translateY(-1px); }
+        .submit-btn:active { transform: translateY(0); }
+        .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+        /* Status messages */
+        .msg {
+            display: none;
+            margin-top: 22px;
+            padding: 20px 24px;
+            border-radius: 2px;
+            font-size: 1em;
+            line-height: 1.6;
+            animation: panelIn 0.4s ease both;
+        }
+        .msg-success {
+            background: #f0f8f2;
+            border: 1px solid #a8d5b5;
+            color: #2d6a42;
+        }
+        .msg-error {
+            background: #fdf2f2;
+            border: 1px solid #e8b4b4;
+            color: #8b2020;
+        }
+
+        /* Footer */
+        .card-footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .card-footer p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.02em;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Important note */
+        .form-note {
+            font-size: 0.8em;
+            color: var(--text-mid);
+            margin-top: -12px;
+            margin-bottom: 18px;
+            padding: 10px 14px;
+            background: #fff8ee;
+            border-left: 3px solid var(--gold-light);
+            border-radius: 0 2px 2px 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 560px) {
+            .card-inner { margin: 18px; padding: 28px 20px 32px; }
+            .corner { display: none; }
+            .detail-row { gap: 12px; }
+            .rsvp-panel { padding: 22px 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="clouds">
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
+        <div class="cloud c3"></div>
+        <div class="cloud c4"></div>
+    </div>
+
+    <div class="card">
+        <div class="card-top-bar"></div>
+
+        <div class="card-inner">
+            <!-- Corner ornaments -->
+            <span class="corner corner-tl">❧</span>
+            <span class="corner corner-tr">❧</span>
+            <span class="corner corner-bl">❧</span>
+            <span class="corner corner-br">❧</span>
+
+            <!-- Cross -->
+            <div class="cross-wrap">
+                <span class="cross-symbol">✝</span>
+            </div>
+
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="heading-invited">You're Invited</h1>
+            <p class="heading-sub">The Holy Christening of Kalixto Francis G. Castillo</p>
+
+            <div class="divider" style="margin-top:20px;">
+                <div class="divider-line"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- Event Details -->
+            <div class="details-block">
+                <div class="detail-row">
+                    <div class="detail-icon">👶</div>
+                    <div class="detail-content">
+                        <span class="detail-label">Baby</span>
+                        <div class="detail-value"><strong>Baby Kalixto Francis G. Castillo</strong><br>Child of Mr. & Mrs. Karl & Trixieli Castillo</div>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-content">
+                        <span class="detail-label">Date &amp; Time</span>
+                        <div class="detail-value">Saturday, May 02, 2026 at 9:30AM</div>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-icon">⛪</div>
+                    <div class="detail-content">
+                        <span class="detail-label">Ceremony</span>
+                        <div class="detail-value">Epiphany of our lord co-catheral parish<br>lingayen, pangasina</div>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-icon">🎉</div>
+                    <div class="detail-content">
+                        <span class="detail-label">Reception Follows</span>
+                        <div class="detail-value">Regina's Garden and Restaurant<br>Lingayen, Pangasinan</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP Section -->
+            <div class="rsvp-section">
+                <p class="rsvp-heading">Kindly let us know if you will be joining us</p>
+
+                <button class="rsvp-toggle-btn" id="rsvpToggleBtn" type="button">
+                    <span id="btnIcon">🎈</span>
+                    <span id="btnText">Will You Be Joining Us?</span>
+                </button>
+
+                <!-- RSVP Form -->
+                <div class="rsvp-panel" id="rsvpPanel">
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adultsCount">Number of Adults</label>
+                        <input type="number" id="adultsCount" min="0" max="20" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="childrenCount">Number of Children</label>
+                        <input type="number" id="childrenCount" min="0" max="20" value="0">
+                    </div>
+
+                    <!-- Live preview -->
+                    <div class="guest-preview" id="guestPreview"></div>
+
+                    <button class="submit-btn" id="submitBtn" type="button">
+                        <span id="submitText">Send My RSVP ✨</span>
+                        <span id="loadingText" style="display:none">⏳ Sending…</span>
+                    </button>
+                </div>
+
+                <!-- Status messages -->
+                <div class="msg msg-success" id="msgSuccess">
+                    🎉 <strong>RSVP Received!</strong><br>
+                    Thank you! We can't wait to celebrate with you. God bless! 🙏
+                </div>
+                <div class="msg msg-error" id="msgError">
+                    ❌ <strong>Something went wrong.</strong><br>
+                    Please try again, or contact us directly.
+                </div>
+            </div>
+
+            <div class="divider" style="margin-top:36px;">
+                <div class="divider-line"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer">
+                <p>We joyfully invite you to share in this sacred moment<br>as we welcome <em>[Baby Name]</em> into God's family.</p>
+            </div>
+        </div>
+        <!-- end .card-inner -->
+    </div>
+    <!-- end .card -->
+
+    <script>
+        // ============================================================
+        // ⚙️  CONFIGURATION
+        // Replace these values with your actual Google Form details.
+        //
+        // How to get your Form ID:
+        //   1. Open your Google Form (not the spreadsheet).
+        //   2. Click Share / Send → Link tab.
+        //   3. Copy the URL. It looks like:
+        //      https://docs.google.com/forms/d/e/XXXX…XXXX/viewform
+        //   4. The FORM_ID is the long string between /d/e/ and /viewform.
+        //
+        // How to get Entry IDs:
+        //   1. Open your published form in a browser.
+        //   2. Right-click a question field → Inspect.
+        //   3. Look for name="entry.XXXXXXXXX" on the <input> element.
+        // ============================================================
+        const CONFIG = {
+            FORM_ID:          '1FAIpQLSfC5K5MUKJwdpvamu9t6V9KKvhPob3V6SPbh06uveo0fblLBQ',
+            ENTRY_FULL_NAME:  'entry.1678301820',
+            ENTRY_ADULTS:     'entry.1333737026',
+            ENTRY_CHILDREN:   'entry.1075019088',
+        };
+        // ============================================================
+
+        const toggleBtn  = document.getElementById('rsvpToggleBtn');
+        const rsvpPanel  = document.getElementById('rsvpPanel');
+        const btnIcon    = document.getElementById('btnIcon');
+        const btnText    = document.getElementById('btnText');
+        const fullName   = document.getElementById('fullName');
+        const adultsCount= document.getElementById('adultsCount');
+        const childrenCount = document.getElementById('childrenCount');
+        const guestPreview  = document.getElementById('guestPreview');
+        const submitBtn  = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const loadingText= document.getElementById('loadingText');
+        const msgSuccess = document.getElementById('msgSuccess');
+        const msgError   = document.getElementById('msgError');
+
+        // ── Toggle form open/close ──────────────────────────────────
+        toggleBtn.addEventListener('click', () => {
+            const isOpen = rsvpPanel.classList.contains('visible');
+
+            if (isOpen) {
+                rsvpPanel.classList.remove('visible');
+                toggleBtn.classList.remove('open');
+                btnIcon.textContent = '🎈';
+                btnText.textContent = 'Will You Be Joining Us?';
+            } else {
+                rsvpPanel.classList.add('visible');
+                toggleBtn.classList.add('open');
+                btnIcon.textContent = '✕';
+                btnText.textContent = 'Close Form';
+                // hide any previous messages when re-opening
+                msgSuccess.style.display = 'none';
+                msgError.style.display   = 'none';
+            }
+        });
+
+        // ── Live preview ────────────────────────────────────────────
+        function updatePreview() {
+            const name     = fullName.value.trim();
+            const adults   = parseInt(adultsCount.value)   || 0;
+            const children = parseInt(childrenCount.value) || 0;
+            const total    = adults + children;
+
+            if (name) {
+                guestPreview.innerHTML =
+                    `<strong>${name}</strong><br>` +
+                    `${adults} Adult${adults !== 1 ? 's' : ''} · ` +
+                    `${children} Child${children !== 1 ? 'ren' : ''} · ` +
+                    `<strong>Total: ${total} guest${total !== 1 ? 's' : ''}</strong>`;
+                guestPreview.style.display = 'block';
+            } else {
+                guestPreview.style.display = 'none';
+            }
+        }
+
+        [fullName, adultsCount, childrenCount].forEach(el => {
+            el.addEventListener('input', updatePreview);
+        });
+
+        // ── Submit to Google Forms ──────────────────────────────────
+        submitBtn.addEventListener('click', async () => {
+            const name = fullName.value.trim();
+
+            if (!name) {
+                fullName.focus();
+                fullName.style.borderColor = '#e05c5c';
+                setTimeout(() => fullName.style.borderColor = '', 1500);
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.style.display = 'none';
+            loadingText.style.display = 'inline';
+            msgSuccess.style.display  = 'none';
+            msgError.style.display    = 'none';
+
+            const body = new URLSearchParams({
+                [CONFIG.ENTRY_FULL_NAME]: name,
+                [CONFIG.ENTRY_ADULTS]:    adultsCount.value,
+                [CONFIG.ENTRY_CHILDREN]:  childrenCount.value,
+            });
+
+            try {
+                // no-cors is required — the response will be opaque but the data IS submitted
+                await fetch(
+                    `https://docs.google.com/forms/d/e/${CONFIG.FORM_ID}/formResponse`,
+                    {
+                        method:  'POST',
+                        mode:    'no-cors',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body:    body.toString(),
+                    }
+                );
+            } catch (_) {
+                // no-cors fetch never throws; any error here is a network issue
+                msgError.style.display = 'block';
+                resetSubmitBtn();
+                return;
+            }
+
+            // Success: clear form and show message
+            fullName.value      = '';
+            adultsCount.value   = '1';
+            childrenCount.value = '0';
+            guestPreview.style.display = 'none';
+
+            rsvpPanel.classList.remove('visible');
+            toggleBtn.classList.remove('open');
+            btnIcon.textContent = '🎈';
+            btnText.textContent = 'Will You Be Joining Us?';
+
+            msgSuccess.style.display = 'block';
+            resetSubmitBtn();
+        });
+
+        function resetSubmitBtn() {
+            submitBtn.disabled = false;
+            submitText.style.display = 'inline';
+            loadingText.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
